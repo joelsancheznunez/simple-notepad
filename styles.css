@@ -6,7 +6,11 @@ html, body {
 }
 
 body {
-    padding-top: 80px; /* Adjust based on your navbar height */
+    padding-top: 73px; /* Adjust based on your navbar height */
+}
+
+h2 {
+    font-size: 36px;
 }
 
 .content-container {
@@ -69,7 +73,7 @@ body {
 }
 
 .form-label {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .text-primary {
@@ -82,7 +86,7 @@ body {
 
 .navbar {
     background-color: #2a353f;
-    padding: 1.5px;
+    padding: 1px;
 }
 
 .container-fluid {
