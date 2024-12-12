@@ -1,4 +1,4 @@
-const formInputs = ['name', 'phone', 'email', 'reason', 'notes'];
+const formInputs = ['notes'];
 
 function saveFormData() {
     formInputs.forEach(id => {
@@ -14,13 +14,9 @@ function loadFormData() {
 }
 
 function copyNotes() {
-    var name = document.getElementById('name').value;
-    var phone = document.getElementById('phone').value;
-    var email = document.getElementById('email').value;
-    var reason = document.getElementById('reason').value;
     var notes = document.getElementById('notes').value;
 
-    var textToCopy = `Caller's Name: ${name}\nPhone Number: ${phone}\nEmail Address: ${email}\nReason of the Call: ${reason}\nNotes:\n${notes}`;
+    var textToCopy = `${notes}`;
 
     navigator.clipboard.writeText(textToCopy).then(function() {
         showCopyDialog();

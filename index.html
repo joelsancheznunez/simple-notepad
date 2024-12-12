@@ -3,33 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Friendly Notepad</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <title>Notepad</title>
+    <link href="https://bootswatch.com/5/solar/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/notes.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light shadow fixed-top">
         <div class="container-fluid">
-            <div class="navbar-logo">
-                <a class="navbar-brand" href="index.html">
-                    <img src="images/stafi_logo.png" alt="Stafi Logo" class="logo-stafi">
-                </a>
-            </div>
             <div class="navbar-content">
                 <div class="navbar-text text-center">
-                    <h2 class="mb-1">Friendly Notepad</h2>
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-link">Home</a>
-                        <span class="nav-separator">|</span>
-                        <a href="immigration.html" class="nav-link">Immigration</a>
-                        <span class="nav-separator">|</span>
-                        <a href="pines-federal.html" class="nav-link">Pines Federal</a>
-                        <span class="nav-separator">|</span>
-                        <a href="https://zingtree.com/" target="_blank" class="nav-link">Zingtree</a>
-                        <span class="nav-separator">|</span>
-                        <a href="help.html" class="nav-link">Help</a>
-                    </div>
+                    <h2 class="mb-1">Simple Notepad</h2>
                 </div>
             </div>
         </div>
@@ -37,31 +21,13 @@
 
     <div class="container content-container mt-1">
         <form id="noteForm">
-            <div class="row mb-3">
-                <div class="col-md-4">
-                    <label for="name" class="form-label">Caller's Name:</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="col-md-4">
-                    <label for="phone" class="form-label">Phone Number:</label>
-                    <input type="tel" class="form-control" id="phone" required>
-                </div>
-                <div class="col-md-4">
-                    <label for="email" class="form-label">Email Address:</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="reason" class="form-label">Reason of the call:</label>
-                <input type="text" class="form-control" id="reason" required>
-            </div>
             <div class="d-flex justify-content-end mb-2">
-                <button type="button" class="btn btn-outline-primary me-2 top-buttons" id="copyButton">Copy Notes</button>
-                <button type="button" class="btn btn-outline-danger top-buttons" id="clearButton" onclick="showConfirmDialog()">Clear Notes</button>
+                <button type="button" class="btn btn-outline-success me-2 top-buttons" id="copyButton">Copy Notes</button>
+                <button type="button" class="btn btn-outline-warning top-buttons" id="clearButton" onclick="showConfirmDialog()">Clear Notes</button>
             </div>
             <div class="mb-3">
-                <label for="notes" class="form-label">Take Notes:</label>
-                <textarea class="form-control" id="notes" rows="8" required placeholder="Type everything you consider relevant and important regarding the calls here..."></textarea>
+                <label for="notes" class="form-label">Type your notes below...</label>
+                <textarea class="form-control" id="notes" rows="18" required placeholder="Type everything you need here..."></textarea>
             </div>
         </form>
     </div>
@@ -82,7 +48,7 @@
 
     <footer class="footer mt-auto py-3">
         <div class="container text-center">
-            <span class="text-muted">The Friendly Notepad | Feedback & Suggestions: <a href="mailto:joel.sanchez@getstafi.com">joel.sanchez@getstafi.com</a></span>
+            <span class="text-light">Simple Notepad</span>
         </div>
     </footer>
 
