@@ -19,15 +19,14 @@
         </div>
     </nav>
 
-    <div class="container content-container mt-1">
-        <form id="noteForm">
-            <div class="d-flex justify-content-end mb-2">
-                <button type="button" class="btn btn-outline-success me-2 top-buttons" id="copyButton" style="font-size: 18px;">Copy Notes</button>
-                <button type="button" class="btn btn-outline-warning top-buttons" id="clearButton" style="font-size: 18px;" onclick="showConfirmDialog()">Clear Notes</button>
-            </div>
+    <div class="container content-container mt-1" style="max-width: 100%; width: 100%; padding: 0 50px;">
+        <div class="d-flex justify-content-center mb-2">
+            <button type="button" class="btn btn-outline-success top-buttons me-2" id="copyButton" style="font-size: 18px;">Copy Notes</button>
+            <button type="button" class="btn btn-outline-warning top-buttons" id="clearButton" style="font-size: 18px;" onclick="showConfirmDialog()">Clear Notes</button>
+        </div>
+        <form id="noteForm">           
             <div class="mb-3">
-                <label for="notes" class="form-label" style="font-size: 18px;">Type your notes...</label>
-                <textarea class="form-control" id="notes" style="font-size: 27px" rows="12" required placeholder="Type everything you need here..."></textarea>
+                <textarea class="form-control" id="notes" style="font-size: 27px" rows="12" required placeholder="Type your notes here..."></textarea>
             </div>
         </form>
     </div>
