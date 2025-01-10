@@ -1,4 +1,5 @@
-const formInputs = ['notes'];
+const formInputs = ['notes1', 'notes2'];
+let currentTextareaId = '';
 
 function saveFormData() {
     formInputs.forEach(id => {
@@ -13,8 +14,8 @@ function loadFormData() {
     });
 }
 
-function copyNotes() {
-    var notes = document.getElementById('notes').value;
+function copyNotes(textareaId) {
+    var notes = document.getElementById(textareaId).value;
 
     var textToCopy = `${notes}`;
 
@@ -39,8 +40,10 @@ function hideCopyDialog() {
     document.getElementById('copyDialog').style.display = 'none';
 }
 
-function showConfirmDialog() {
-    document.getElementById('confirmDialog').style.display = 'block';
+function showConfirmDialog(textareaId) {
+    currentTextareaId = textareaId;
+    var confirmDialog = document.getElementById('confirmDialog');
+    confirmDialog.style.display = 'block';
 }
 
 function hideConfirmDialog() {
@@ -48,21 +51,33 @@ function hideConfirmDialog() {
 }
 
 function clearForm() {
-    document.getElementById("noteForm").reset();
-    formInputs.forEach(id => localStorage.removeItem(id));
+    document.getElementById(currentTextareaId).value = '';
+    localStorage.removeItem(currentTextareaId);
     hideConfirmDialog();
 }
 
 window.onload = function() {
     loadFormData();
     
-    document.getElementById('noteForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-    });
-
     formInputs.forEach(id => {
         document.getElementById(id).addEventListener('input', saveFormData);
     });
 
-    document.getElementById('copyButton').addEventListener('click', copyNotes);
+    document.getElementById('copyButton1').addEventListener('click', function() {
+        copyNotes('notes1');
+    });
+
+    document.getElementById('clearButton1').addEventListener('click', function() {
+        showConfirmDialog('notes1');
+    });
+
+    document.getElementById('copyButton2').addEventListener('click', function() {
+        copyNotes('notes2');
+    });
+
+    document.getElementById('clearButton2').addEventListener('click', function() {
+        showConfirmDialog('notes2');
+    });
+
+    document.getElementById('confirmYes').addEventListener('click', clearForm);
 };
